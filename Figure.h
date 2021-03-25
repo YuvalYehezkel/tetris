@@ -1,6 +1,6 @@
 #pragma once
 #include "Board.h"
-
+#include <iostream>
 
 class Figure
 {
@@ -10,9 +10,9 @@ class Figure
 	char direction; 
 	int rows = 4;
 	//int cols = 4;
-	int figure1[4] ;// ξημχδ πτψγϊ μφεψδ 1 εφεψδ 2
+	int figure1[4];// ΧΧ—ΧΧ§Χ” Χ Χ¤Χ¨Χ“Χª ΧΧ¦Χ•Χ¨Χ” 1 Χ•Χ¦Χ•Χ¨Χ” 2
 	//char figure2[2][3] = { {1,0,0},{ };
-	//Board b;
+	Board *b; //ΧΧ Χ™Χ•Χ“ΧΆΧª ΧΧ Χ‘ΧΧΧª Χ¦Χ¨Χ™Χ
 public:
 	//ctor
 	Figure()
@@ -20,8 +20,9 @@ public:
 		initFigure();
 	};
 	void initFigure();
-	void Rotate();//Rotate is up- kbhit αμηιφδ ιξιπδ ΰπι φψιλδ μδζιζ ΰϊ δχεψγιπθεϊ ιξιπδ
+	void Rotate();//Rotate is up- kbhit Χ‘ΧΧ—Χ™Χ¦Χ” Χ™ΧΧ™Χ Χ” ΧΧ Χ™ Χ¦Χ¨Χ™Χ›Χ” ΧΧ”Χ–Χ™Χ– ΧΧª Χ”Χ§Χ•Χ¨Χ“Χ™Χ ΧΧ•Χª Χ™ΧΧ™Χ Χ”
 	void RightOrLeftOrdown();
 	void printFigure();
+	void setBoard(Board* b1);//ΧΧ Χ™Χ•Χ“ΧΆΧª ΧΧ Χ‘ΧΧΧª Χ¦Χ¨Χ™Χ
 
 };
