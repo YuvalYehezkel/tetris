@@ -1,21 +1,18 @@
-
-#include "Board.h"
 //#include "io_utils.h"
 #include "Figure.h"
 #define ESC 27
-
+#include <conio.h>
+using namespace std;
 
 //
 
 int main()
 {
 	Board board1;
-
-	board1.initBoard();
-	gotoxy(1, 2);
+	gotoxy(10, 10);// ברגע שיש גו טו איקס ווי עם בורד, התוכנית עפה, בלי שניהם ביחד עובד
 	Figure f;
-	f.printFigure();
-	
+	//f.setBoard(&board1); // לא יודעת אם באמת צריך
+	//f.printFigure();
 	//board2.initBoard();
 	/*gotoxy(1, 1);
 	cout << getch;*/
@@ -34,21 +31,33 @@ int main()
 	//clrScr();
 	//_flushall();
 
-	//int x = 1, y = 1;
+	int x = 1, y = 1;
 
-	//while (!_kbhit() || _getch() != ESC)
-	//{
-	//	gotoxy(x, y);
-	//	std::cout << "*" << std::endl;
-	//	Sleep(500);
-	//	gotoxy(x, y);
-	//	std::cout << " "<<std::endl;
-	//	++x;
-	//	if (x > 79)
-	//		x = 1;
-	//	++y;
-	//	if (y > 20)
-	//		y = 1;
-	//}
-	//return 0;
+	while ((!_kbhit()||_getch() != ESC) && y<13)
+	{
+		//if (!_kbhit())
+		//{
+			gotoxy(x, y);
+			f.printFigure();
+			cout << endl<<endl;
+			Sleep(1000);
+			gotoxy(x, y);
+			if(y<=11)
+				cout << "    " << endl<<endl;
+			/*++x;
+			if (x > 79)
+				x = 1;*/
+			++y;
+			
+		//}
+		//else if (_getch() == 'a' || _getch() == 'A' || _getch() == 'j' || _getch() == 'J')
+		//{
+
+		//}
+		//else if (_getch() == 'a' || _getch() == 'A' || _getch() == 'j' || _getch() == 'J')
+		//{
+
+		//}
+	}
+	return 0;
 }
