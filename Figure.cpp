@@ -2,7 +2,7 @@
 
 void Figure::Rotate()
 {
-	// ΰν δξωϊξω δλπιρ μξςμδ- δφεψδ ξρϊεααϊ, αωΰψ δλιεεπιν πωΰψϊ ΰεϊε γαψ
+	// ΧΧ Χ”ΧΧ©ΧªΧΧ© Χ”Χ›Χ Χ™Χ΅ ΧΧΧΆΧΧ”- Χ”Χ¦Χ•Χ¨Χ” ΧΧ΅ΧªΧ•Χ‘Χ‘Χª, Χ‘Χ©ΧΧ¨ Χ”Χ›Χ™Χ•Χ•Χ Χ™Χ Χ Χ©ΧΧ¨Χª ΧΧ•ΧªΧ• Χ“Χ‘Χ¨
 }
 void Figure::RightOrLeftOrdown()
 {
@@ -16,8 +16,8 @@ void Figure::printFigure()
 		
 		if (figure1[i] == 1)
 			cout << '*';
-			else
-				cout << ' ';
+		else
+			cout << ' ';
 	
 	}
 }
@@ -32,4 +32,8 @@ void Figure::initFigure()
 
 
 
+}
+void Figure::setBoard(Board* b1)//ΧΧ Χ™Χ•Χ“ΧΆΧª ΧΧ Χ‘ΧΧΧª Χ¦Χ¨Χ™Χ
+{
+	b = b1;
 }
