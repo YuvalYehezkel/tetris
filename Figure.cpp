@@ -2,7 +2,7 @@
 
 void Figure::Rotate()
 {
-	// אם המשתמש הכניס למעלה- הצורה מסתובבת, בשאר הכיוונים נשארת אותו דבר
+
 }
 void Figure::RightOrLeftOrdown()
 {
