@@ -15,14 +15,14 @@ void Figure::printFigure(Point* p)
 	{
 		for (int j = 0; j < SIZE; j++)
 		{
-			if ((FigureBody[i][j] == 1) && !(*p).getIsBusy())//  אולי כדאי להוסיף &&figureBody[p.getX][p.getY] != 0) משהו כמו
+			if ((FigureBody[i][j] == 1) && !(*p).getIsBusy())
 			{
 				gotoxy((*p).getX(), (*p).gety());
 				cout << '#';
 				int x = (*p).getX();//צריך עידכון לgetIsBusy
 				x++;
 			}
-			else
+			else //   אולי כדאי לעדכן את הנקודות שהודפסו בהן סולמיות כתפוסות ולהוסיף באלס תנאי &&figureBody[p.getX][p.getY] != 0) 
 			{
 			
 				cout << ' ';
