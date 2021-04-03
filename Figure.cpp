@@ -15,7 +15,7 @@ void Figure::printFigure(Point* p)
 	{
 		for (int j = 0; j < SIZE; j++)
 		{
-			if ((FigureBody[i][j] == 1) && !(*p).getIsBusy())
+			if ((FigureBody[i][j] == 1) && !(*p).getIsBusy())//  אולי כדאי להוסיף &&figureBody[p.getX][p.getY] != 0) משהו כמו
 			{
 				gotoxy((*p).getX(), (*p).gety());
 				cout << '#';
