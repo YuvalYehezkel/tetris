@@ -1,15 +1,22 @@
 #pragma once
 #include "Board.h"
+enum { LEFT_PLAYER = 1, RIGHT_PLAYER = 2 };
 
 class Player
 {
-	Board* b;
+	int serialPlayerNum;
 
 
 public:
-	Player(); //ctor
-	~Player()
+	//Player(); //ctor
+	void SetSerialNum(int num)
 	{
-		delete b; //not sure
+		serialPlayerNum = num;
 	}
+	/*
+		void moveLeft();
+		void moveRight();
+		void RotateLeft();
+		void RotateRight()*/;
+
 };

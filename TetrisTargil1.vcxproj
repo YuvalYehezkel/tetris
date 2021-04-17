@@ -143,13 +143,17 @@
     <ClCompile Include="Figure.cpp" />
     <ClCompile Include="gotoxy.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Point.cpp" />
+    <ClCompile Include="TheGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Figure.h" />
     <ClInclude Include="gotoxy.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="TheGame.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

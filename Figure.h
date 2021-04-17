@@ -1,28 +1,55 @@
-#pragma once
+﻿#pragma once
 #include "Board.h"
+#include "Player.h"
 #include <iostream>
 
+enum SHAPES { LINE = 0, L = 1, RL = 2, SQUARE = 3, Z = 4, RZ = 5, PLUS = 6 };//RT=reversed T=  *
+																	 //=          *** 
+enum startValue { X1 = 5, Y1 = 1, X2 = 18, Y2 = 1 };
 class Figure
 {
 	enum { SIZE = 4 };
-	char Body[SIZE]; //7 figures ****  **   *       *     **     *     **
-	////////////////////////////////// **   ***   ***    **     ***     **
-	char direction; 
-	int rows = 4;
-	//int cols = 4;
-	int figure1[4];// מחלקה נפרדת לצורה 1 וצורה 2
-	//char figure2[2][3] = { {1,0,0},{ };
-	Board *b; //לא יודעת אם באמת צריך
+	Point FigureBody[SIZE];
+	//int serial_num_of_figure=0;
+	int RotateNum = 0;
+
 public:
-	//ctor
+	//// empty ctor
 	Figure()
 	{
-		initFigure();
+
+	}
+	Figure(int serialNum, int playerNum)
+	{
+		//SetSerialNum(serialNum);
+		if (playerNum == LEFT_PLAYER)
+		{
+			initFigureBySerialNum(serialNum, X1, Y1);
+		}
+		else if (playerNum == RIGHT_PLAYER)
+		{
+			initFigureBySerialNum(serialNum, X2, Y2);
+		}
+
+
 	};
-	void initFigure();
-	void Rotate();//Rotate is up- kbhit בלחיצה ימינה אני צריכה להזיז את הקורדינטות ימינה
-	void RightOrLeftOrdown();
-	void printFigure();
-	void setBoard(Board* b1);//לא יודעת אם באמת צריך
+	void setRotateNum(int num)
+	{
+		RotateNum = num;
+	}
+	int getRotateNum()
+	{
+		return RotateNum;
+	}
+
+	//void SetSerialNum(int num) { serial_num_of_figure = num; };
+	//int GetSerialNum() const { return serial_num_of_figure; };
+	void initFigureBySerialNum(int serialNum, int x, int y);
+	void printFigure(Board& board);
+	void updateFigureDrop(Board& board, int serialNum);
+	void updateFigureLeft(Board& board, int serialNum);
+	void updateFigureRight(Board& board, int serialNum);
+	void updateFigureRotateClockWise(Board& board, int serialNum);
+	void updateFigureRotateCounterClockWise(Board& board, int serialNum);
 
 };

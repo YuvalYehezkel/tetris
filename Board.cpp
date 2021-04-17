@@ -1,4 +1,4 @@
-#include "Board.h"
+﻿#include "Board.h"
 #include "gotoxy.h"
 
 Board::Board()
@@ -8,36 +8,30 @@ Board::Board()
 
 void Board::initBoard()
 {
-	printMenu();
-	//נראה לי שאמור להיות מודפס לוח רק אם המשתמש בוחר להתחיל או להמשיך משחק
-	for (int i = 0; i <= 2 * ROWS + 2; i++)
+	for (int i = 0; i < ROWS + 2; i++)
 	{
-		for (int j = 0; j <= COLS + 1; j++)
+		for (int j = 0; j < 2 * COLS + 3; j++)
 		{
-			if (j == 0 || j == COLS + 1 || i == 0 || i == ROWS + 1 || i == 2 * ROWS + 2)
+			if (i == 0 || i == ROWS + 1 || j == 0 || j == COLS + 1 || j == (2 * COLS) + 2)
 			{
-				gotoxy(i, j);
-				cout << '#';
-				GameBoard[i][j].SetPoint(i, j, false, ' ');
+				turnToBusyPoint(j, i, '*');
 
 			}
-
 			else
 			{
-				gotoxy(i, j);
-				cout << ' ';
-				GameBoard[i][j] = { i,j,true,' ' };
+				turnToFreePoint(j, i, ' ');
 			}
 		}
 	}
+	printMenu();
 }
 
 void Board::printMenu()
 {
-	gotoxy(0, COLS + 6);
+	gotoxy(0, ROWS + 3);
 	cout << "Please select one of the options:" << endl;
 	cout << "(1) Start a new game" << endl;
-	cout << "(2) Continue a paused game" << endl;
+	cout << "(2) Continue a paused game/resume game" << endl;
 	cout << "(8) Present instructions and keys" << endl;
 	cout << "(9) EXIT" << endl;
 }
